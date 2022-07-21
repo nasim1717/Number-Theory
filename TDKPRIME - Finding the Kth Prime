@@ -1,0 +1,47 @@
+/// TDKPRIME - Finding the Kth Prime ///spoj online judge
+
+#include<bits/stdc++.h>
+#include<math.h>
+#include<string>
+#define ll long long
+#define vl vector<ll>
+#define vi vector<int>
+#define v2 vector<vector<int>>
+#define pb push_back
+#define nl endl
+#define yes "YES"
+#define no "NO"
+#define mod 1000000007
+#define mod1 998244353
+#define mx  1e69
+#define ull unsigned long long
+#define     in_range(i,x,y)    for(int i=x;i<y;i++)
+#define     in_range1(i,x,y)    for(int i=x;i<=y;i++)
+#define st_input for(int i=x; i<y; i++) {cin>>st[i];}
+using namespace std;
+vi isprime;
+bool ar[90000001];
+void sieve(){
+    int inMax=90000000,i,j;
+    ar[0] = ar[1] = true;
+    for(i=2; i*i<=inMax; i++){
+        if(!ar[i]){
+            for(j=i*i; j<=inMax; j+=i)
+                ar[j]=true;
+        }
+    }
+    for(i=2; i<=inMax; i++){
+        if(!ar[i])
+            isprime.pb(i);
+    }
+}
+int main(){
+    ll i,tc,n,ans;
+    sieve();
+    cin>>tc;
+    while(tc--){
+        cin>>n;
+        cout<<isprime[n-1]<<nl;
+    }
+return 0;
+}
