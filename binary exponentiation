@@ -46,7 +46,7 @@ return 0;
 }
 
 
-*******MOD Pow*****
+*******MODULO exponentiation*****
 #include<bits/stdc++.h>
 #include<math.h>
 #include<string>
