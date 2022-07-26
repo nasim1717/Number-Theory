@@ -1,0 +1,72 @@
+///Fibonacci Finding (easy)
+
+#include<bits/stdc++.h>
+#include<math.h>
+#include<string>
+#define ll long long
+#define vl vector<ll>
+#define vi vector<int>
+#define v2 vector<vector<int>>
+#define pb push_back
+#define nl endl
+#define yes "YES"
+#define no "NO"
+#define mod 1000000007
+#define mod1 998244353
+#define ull unsigned long long
+#define     in_range(i,x,y)    for(int i=x;i<y;i++)
+#define     in_range1(i,x,y)    for(int i=x;i<=y;i++)
+#define st_input for(int i=x; i<y; i++) {cin>>st[i];}
+#define  N 1000
+using namespace std;
+ll ar[3];
+ll identiy[3][3], tran[3][3];
+void multi(ll identiy[3][3],ll tran[3][3], ll dim){
+    ll res[dim+1][dim+1];
+    for(ll i=1; i<=dim; i++){
+        for(ll j=1; j<=dim; j++){
+            res[i][j]=0;
+            for(ll k=1; k<=dim; k++){
+                ll x = (identiy[i][k]*tran[k][j])%mod;
+                res[i][j] = (res[i][j]+x)%mod;
+            }
+        }
+    }
+    for(ll i=1; i<=dim; i++){
+        for(ll j=1; j<=dim; j++){
+            identiy[i][j]=res[i][j];
+        }
+    }
+}
+ll fibo(ll n){
+    identiy[1][1]=identiy[2][2]=1;
+    identiy[1][2]=identiy[2][1]=0;
+    tran[1][1]=0;
+    tran[1][2] = tran[2][1] = tran[2][2]=1;
+    if(n==1) return ar[n];
+    n--;
+    while(n){
+        if(n%2){
+            multi(identiy,tran,2),n--;
+        }
+        else{
+            multi(tran,tran,2),n/=2;
+        }
+    }
+    ll fn = (ar[1]*identiy[1][1] + ar[2]*identiy[2][1])%mod;
+    return fn;
+}
+void solve(){
+    ll x,y,sum,r,n,i,j;
+    cin>>ar[1]>>ar[2]>>n;
+    n++;
+    cout<<fibo(n)<<nl;
+}
+int main(){
+    ll i,tc,n,Pow,m,ans;
+    cin>>tc;
+    while(tc--){
+       solve();
+    }
+return 0;
+}
