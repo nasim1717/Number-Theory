@@ -1,0 +1,56 @@
+/// Lightoj online judge
+////Fibsieve's Fantabulous Birthday
+
+
+#include<bits/stdc++.h>
+#include<math.h>
+#include<string>
+#define ll long long
+#define vl vector<ll>
+#define vi vector<int>
+#define v2 vector<vector<int>>
+#define pb push_back
+#define nl endl
+#define yes "YES"
+#define no "NO"
+#define mod 1000000007
+#define mod1 998244353
+#define ull unsigned long long
+#define     in_range(i,x,y)    for(int i=x;i<y;i++)
+#define     in_range1(i,x,y)    for(int i=x;i<=y;i++)
+#define st_input for(int i=x; i<y; i++) {cin>>st[i];}
+#define  N 1000
+using namespace std;
+ll cas=0;
+void solve(){
+    ll x,y,m,ans,n,i,S,j;
+    ll row,column;
+    cin>>S;
+    cas++;
+    ll root = ceil(sqrt(S*1.0));
+    ll lacking = (root*root)-S;
+    if(lacking<root){
+         row = root;
+         column = lacking+1;
+    }
+    else{
+        column = root;
+        row = S - (root-1)*(root-1);
+    }
+    if(root%2==0){
+        ll tmp = column;
+        column = row;
+        row = tmp;
+    }
+   cout<<"Case "<<cas<<": "<<column<<" "<<row<<nl;
+}
+int main(){
+    ll i,tc,n,Pow,m,ans;
+    cin>>tc;
+    while(tc--){
+        solve();
+    }
+return 0;
+}
+
+
