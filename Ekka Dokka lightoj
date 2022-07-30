@@ -1,0 +1,51 @@
+/// lightoj
+
+#include<bits/stdc++.h>
+#include<math.h>
+#include<string>
+#define ll long long
+#define vl vector<ll>
+#define vi vector<int>
+#define v2 vector<vector<int>>
+#define pb push_back
+#define nl endl
+#define yes "YES"
+#define no "NO"
+#define mod 1000000007
+#define mod1 998244353
+#define ull unsigned long long
+#define     in_range(i,x,y)    for(int i=x;i<y;i++)
+#define     in_range1(i,x,y)    for(int i=x;i<=y;i++)
+#define st_input for(int i=x; i<y; i++) {cin>>st[i];}
+#define  N 1000
+using namespace std;
+ll cas=0;
+void solve(){
+    ll x,m,n,i,ek,dok,j,ekka,dokka;
+    cin>>n;
+    cas++;
+
+    if(n&1){
+           cout<<"Case "<<cas<<": "<<"Impossible"<<nl;
+    }
+    else{
+        ek = n/2;
+        dok=2;
+        while(ek%2==0){
+            ek/=2;
+            dok*=2;
+        }
+        cout<<"Case "<<cas<<": "<<ek<<" "<<dok<<nl;
+    }
+
+}
+int main(){
+    ll i,tc,n,Pow,m,ans;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cin>>tc;
+    while(tc--){
+        solve();
+    }
+return 0;
+}
