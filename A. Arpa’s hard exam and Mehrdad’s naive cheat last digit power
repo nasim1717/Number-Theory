@@ -1,0 +1,53 @@
+///A. Arpa’s hard exam and Mehrdad’s naive cheat codeforces 742
+
+#include<bits/stdc++.h>
+#include<math.h>
+#include<string>
+#define ll long long
+#define vl vector<ll>
+#define vi vector<int>
+#define v2 vector<vector<int>>
+#define pb push_back
+#define nl endl
+#define yes "YES"
+#define no "NO"
+#define mod 1000000007
+#define mod1 998244353
+#define ull unsigned long long
+#define     in_range(i,x,y)    for(int i=x;i<y;i++)
+#define     in_range1(i,x,y)    for(int i=x;i<=y;i++)
+#define st_input for(int i=x; i<y; i++) {cin>>st[i];}
+#define  N 1000
+using namespace std;
+int cas=0;
+ll Pow(ll a, ll n, ll m){
+    ll res=1;
+    while(n){
+        if(n&1){
+            res = (res*a)%m;
+            n--;
+        }
+        else{
+            a = (a*a)%m;
+            n/=2;
+        }
+    }
+    return res;
+}
+void solve(){
+    ll n;
+     cin>>n;
+    ll ans =  Pow(8,n,10);
+    cout<<ans<<nl;
+}
+
+int main(){
+    ll i,tc,n,Pow,m,ans;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    //cin>>tc;
+//    while(tc--){
+        solve();
+//    }
+return 0;
+}
